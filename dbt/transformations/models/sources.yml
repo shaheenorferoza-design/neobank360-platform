@@ -1,0 +1,12 @@
+sources:
+  - name: raw
+    database: neobank360
+    schema: raw
+    config:
+      enabled: true
+    tables:
+      - name: customers
+      - name: accounts
+      - name: transactions
+      - name: raw_transaction_events
+

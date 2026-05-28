@@ -1,0 +1,18 @@
+{
+  "event_id": "EVT2442",
+  "customer_id": "C104",
+  "account_id": "A1001",
+  "event_type": "CARD_SWIPE",
+  "amount": 814,
+  "currency": "INR",
+  "merchant": {
+    "name": "Swiggy",
+    "category": "ECOMMERCE"
+  },
+  "device": {
+    "device_id": "D14",
+    "ip_address": "10.1.1.87",
+    "location": "Chennai"
+  },
+  "txn_ts": "2026-05-27T15:06:55.653933"
+}

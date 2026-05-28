@@ -1,0 +1,18 @@
+{
+  "event_id": "EVT1850",
+  "customer_id": "C102",
+  "account_id": "A1003",
+  "event_type": "CARD_SWIPE",
+  "amount": 33357,
+  "currency": "INR",
+  "merchant": {
+    "name": "Amazon",
+    "category": "ECOMMERCE"
+  },
+  "device": {
+    "device_id": "D7",
+    "ip_address": "10.1.1.137",
+    "location": "Mumbai"
+  },
+  "txn_ts": "2026-05-27T16:31:17.334097"
+}

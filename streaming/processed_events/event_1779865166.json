@@ -1,0 +1,18 @@
+{
+  "event_id": "EVT6325",
+  "customer_id": "C109",
+  "account_id": "A1002",
+  "event_type": "ATM_WITHDRAWAL",
+  "amount": 12775,
+  "currency": "INR",
+  "merchant": {
+    "name": "Flipkart",
+    "category": "ECOMMERCE"
+  },
+  "device": {
+    "device_id": "D3",
+    "ip_address": "10.1.1.234",
+    "location": "Mumbai"
+  },
+  "txn_ts": "2026-05-27T12:29:26.990086"
+}

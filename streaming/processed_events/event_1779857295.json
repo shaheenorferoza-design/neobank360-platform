@@ -1,0 +1,18 @@
+{
+  "event_id": "EVT6962",
+  "customer_id": "C101",
+  "account_id": "A1009",
+  "event_type": "NETBANKING_TRANSFER",
+  "amount": 25164,
+  "currency": "INR",
+  "merchant": {
+    "name": "Amazon",
+    "category": "ECOMMERCE"
+  },
+  "device": {
+    "device_id": "D20",
+    "ip_address": "10.1.1.251",
+    "location": "Chennai"
+  },
+  "txn_ts": "2026-05-27T10:18:15.317780"
+}

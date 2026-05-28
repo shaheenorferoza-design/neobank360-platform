@@ -1,0 +1,18 @@
+{
+  "event_id": "EVT9791",
+  "customer_id": "C102",
+  "account_id": "A1010",
+  "event_type": "NETBANKING_TRANSFER",
+  "amount": 33154,
+  "currency": "INR",
+  "merchant": {
+    "name": "Flipkart",
+    "category": "ECOMMERCE"
+  },
+  "device": {
+    "device_id": "D14",
+    "ip_address": "10.1.1.147",
+    "location": "Chennai"
+  },
+  "txn_ts": "2026-05-27T15:05:00.610467"
+}

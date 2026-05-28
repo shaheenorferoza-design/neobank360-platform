@@ -1,0 +1,5 @@
+{"event_id":"EVT1001","event_type":"UPI_PAYMENT","customer_id":"C101","account_id":"A1001","amount":2500,"currency":"INR","merchant":{"name":"Amazon","category":"ECOMMERCE"},"device":{"device_id":"D100","ip_address":"10.1.1.1","location":"Hyderabad"},"txn_ts":"2026-05-18T10:15:30"}
+
+{"event_id":"EVT1002","event_type":"ATM_WITHDRAWAL","customer_id":"C102","account_id":"A1002","amount":5000,"currency":"INR","merchant":{"name":"HDFC ATM","category":"ATM"},"device":{"device_id":"D200","ip_address":"10.1.1.2","location":"Bangalore"},"txn_ts":"2026-05-18T10:17:10"}
+
+{"event_id":"EVT1003","event_type":"CARD_SWIPE","customer_id":"C103","account_id":"A1003","amount":1200,"currency":"INR","merchant":{"name":"Reliance Fresh","category":"RETAIL"},"device":{"device_id":"D300","ip_address":"10.1.1.3","location":"Chennai"},"txn_ts":"2026-05-18T10:18:50"}

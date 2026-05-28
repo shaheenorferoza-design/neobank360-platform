@@ -1,0 +1,18 @@
+{
+  "event_id": "EVT3127",
+  "customer_id": "C110",
+  "account_id": "A1004",
+  "event_type": "ATM_WITHDRAWAL",
+  "amount": 5968,
+  "currency": "INR",
+  "merchant": {
+    "name": "Swiggy",
+    "category": "ECOMMERCE"
+  },
+  "device": {
+    "device_id": "D17",
+    "ip_address": "10.1.1.224",
+    "location": "Hyderabad"
+  },
+  "txn_ts": "2026-05-27T13:01:32.695835"
+}

@@ -1,0 +1,52 @@
+version: 2
+
+models:
+
+  - name: stg_transaction_events
+
+    columns:
+
+      - name: event_id
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        tests:
+          - not_null
+
+      - name: event_type
+        tests:
+          - accepted_values:
+              values:
+                - UPI_PAYMENT
+                - CARD_SWIPE
+                - ATM_WITHDRAWAL
+                - NETBANKING_TRANSFER
+
+      - name: txn_ts
+        tests:
+          - not_null
+
+  - name: fct_high_velocity_transactions
+
+    columns:
+
+      - name: event_id
+        tests:
+          - not_null
+          - unique
+
+      - name: fraud_risk_level
+        tests:
+          - accepted_values:
+              values:
+                - HIGH
+                - MEDIUM
+                - LOW
+
+
+
+
+
+                

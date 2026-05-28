@@ -1,0 +1,18 @@
+{
+  "event_id": "EVT5378",
+  "customer_id": "C108",
+  "account_id": "A1002",
+  "event_type": "ATM_WITHDRAWAL",
+  "amount": 39193,
+  "currency": "INR",
+  "merchant": {
+    "name": "Zomato",
+    "category": "ECOMMERCE"
+  },
+  "device": {
+    "device_id": "D9",
+    "ip_address": "10.1.1.75",
+    "location": "Mumbai"
+  },
+  "txn_ts": "2026-05-27T14:03:14.239701"
+}

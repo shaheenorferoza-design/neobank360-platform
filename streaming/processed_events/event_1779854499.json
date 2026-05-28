@@ -1,0 +1,18 @@
+{
+  "event_id": "EVT5436",
+  "customer_id": "C107",
+  "account_id": "A1005",
+  "event_type": "CARD_SWIPE",
+  "amount": 37788,
+  "currency": "INR",
+  "merchant": {
+    "name": "Swiggy",
+    "category": "ECOMMERCE"
+  },
+  "device": {
+    "device_id": "D13",
+    "ip_address": "10.1.1.220",
+    "location": "Mumbai"
+  },
+  "txn_ts": "2026-05-27T09:31:39.124908"
+}

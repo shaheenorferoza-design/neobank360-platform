@@ -1,0 +1,18 @@
+{
+  "event_id": "EVT4754",
+  "customer_id": "C107",
+  "account_id": "A1006",
+  "event_type": "CARD_SWIPE",
+  "amount": 6001,
+  "currency": "INR",
+  "merchant": {
+    "name": "Zomato",
+    "category": "ECOMMERCE"
+  },
+  "device": {
+    "device_id": "D16",
+    "ip_address": "10.1.1.140",
+    "location": "Mumbai"
+  },
+  "txn_ts": "2026-05-27T14:18:14.548167"
+}

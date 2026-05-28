@@ -1,0 +1,303 @@
+
+CREATE OR REPLACE TABLE dim_customer (
+    -- Surrogate Key
+    customer_key            NUMBER GENERATED ALWAYS AS IDENTITY,
+    -- Business Key
+    customer_id             VARCHAR(50) NOT NULL,
+    -- Customer Attributes
+    full_name               VARCHAR(200),
+    date_of_birth           DATE,
+    age_band                VARCHAR(50),
+    city                    VARCHAR(100),
+    state                   VARCHAR(100),
+    occupation              VARCHAR(100),
+    -- Compliance / Risk Attributes
+    kyc_status              VARCHAR(50),
+    risk_category           VARCHAR(50),
+    -- Relationship Metadata
+    customer_since_date     DATE,
+    -- SCD Type 2 Columns
+    effective_start_date    TIMESTAMP,
+    effective_end_date      TIMESTAMP,
+    current_flag            VARCHAR(1),
+    -- Warehouse Audit Columns
+    warehouse_insert_ts     TIMESTAMP DEFAULT CURRENT_TIMESTAMP(),
+    CONSTRAINT pk_dim_customer
+        PRIMARY KEY (customer_key)
+);
+---------------------logic---------------------------------
+
+-------------------------dim_customer mapping----------------
+
+customer_key -- hash-based surrogate generation
+customer_id -- null handling
+customer_name -- standardize capitalization remove invalid characters
+date_of_birth -- pass through
+age_band -- be it derived , and to be  calculated in dimension, you decide the criteria
+city -- from source pass through
+state -- values  to be standardized
+occupation -- frm source
+kyc_status -- from source
+risk_category -- from source
+customer_since_date -- from created_timestamp from source
+effective_start_date -- ware house generate login current timestamp
+effective_end_date -- Current active version - null 
+
+current_flag -- current 'Y' historical 'N'
+warehouse_insert_ts-- 
+
+---------------------------------------------------
+
+-------------
+CREATE OR REPLACE TABLE dim_account (
+
+    -- Surrogate Key
+    account_key             NUMBER GENERATED ALWAYS AS IDENTITY,
+
+    -- Business Key
+    account_id              VARCHAR(50) NOT NULL,
+
+    -- Customer Relationship
+    customer_key            NUMBER,
+
+    -- Account Attributes
+    account_type            VARCHAR(50),
+    branch_code             VARCHAR(50),
+
+    currency_code           VARCHAR(10),
+
+    account_open_date       DATE,
+
+    account_status          VARCHAR(50),
+
+    -- SCD Type 2 Columns
+    effective_start_date    TIMESTAMP,
+    effective_end_date      TIMESTAMP,
+    current_flag            VARCHAR(1),
+
+    -- Warehouse Audit Columns
+    warehouse_insert_ts     TIMESTAMP DEFAULT CURRENT_TIMESTAMP(),
+
+    CONSTRAINT pk_dim_account
+        PRIMARY KEY (account_key)
+);
+------------------------------
+CREATE OR REPLACE TABLE dim_date (
+
+    date_key               NUMBER PRIMARY KEY,
+
+    full_date              DATE,
+
+    day_number             NUMBER,
+    day_name               VARCHAR(20),
+
+    week_number            NUMBER,
+
+    month_number           NUMBER,
+    month_name             VARCHAR(20),
+
+    quarter_number         NUMBER,
+
+    year_number            NUMBER,
+    fiscal_year            NUMBER,
+
+    weekend_flag           VARCHAR(1),
+    holiday_flag           VARCHAR(1)
+);
+--------------------------------------------------------
+
+CREATE OR REPLACE TABLE dim_branch (
+
+    branch_key                 NUMBER GENERATED ALWAYS AS IDENTITY,
+
+    branch_code                VARCHAR(50) NOT NULL,
+
+    branch_name                VARCHAR(200),
+
+    city                       VARCHAR(100),
+    state                      VARCHAR(100),
+    region                     VARCHAR(100),
+
+    branch_type                VARCHAR(50),
+
+    branch_open_date           DATE,
+
+    effective_start_date       TIMESTAMP,
+    effective_end_date         TIMESTAMP,
+    current_flag               VARCHAR(1),
+
+    warehouse_insert_ts        TIMESTAMP DEFAULT CURRENT_TIMESTAMP(),
+
+    CONSTRAINT pk_dim_branch
+        PRIMARY KEY (branch_key)
+);
+--------------------------------
+
+CREATE OR REPLACE TABLE dim_device (
+
+    device_key                 NUMBER GENERATED ALWAYS AS IDENTITY,
+
+    device_id                  VARCHAR(100) NOT NULL,
+
+    device_type                VARCHAR(50),
+
+    os_type                    VARCHAR(50),
+
+    browser_type               VARCHAR(100),
+
+    device_risk_level          VARCHAR(50),
+
+    first_seen_date            DATE,
+
+    effective_start_date       TIMESTAMP,
+    effective_end_date         TIMESTAMP,
+    current_flag               VARCHAR(1),
+
+    warehouse_insert_ts        TIMESTAMP DEFAULT CURRENT_TIMESTAMP(),
+
+    CONSTRAINT pk_dim_device
+        PRIMARY KEY (device_key)
+);
+
+
+---------------------------------------------
+
+CREATE OR REPLACE TABLE dim_merchant (
+
+    merchant_key               NUMBER GENERATED ALWAYS AS IDENTITY,
+
+    merchant_id                VARCHAR(100) NOT NULL,
+
+    merchant_name              VARCHAR(200),
+
+    merchant_category          VARCHAR(100),
+
+    city                       VARCHAR(100),
+    state                      VARCHAR(100),
+    country                    VARCHAR(100),
+
+    merchant_risk_rating       VARCHAR(50),
+
+    effective_start_date       TIMESTAMP,
+    effective_end_date         TIMESTAMP,
+    current_flag               VARCHAR(1),
+
+    warehouse_insert_ts        TIMESTAMP DEFAULT CURRENT_TIMESTAMP(),
+
+    CONSTRAINT pk_dim_merchant
+        PRIMARY KEY (merchant_key)
+);
+
+------------------------------------------------
+
+CREATE OR REPLACE TABLE fct_transactions (
+
+    transaction_key                NUMBER GENERATED ALWAYS AS IDENTITY,
+
+    transaction_id                 VARCHAR(100) NOT NULL,
+
+    customer_key                   NUMBER,
+    account_key                    NUMBER,
+    branch_key                     NUMBER,
+    merchant_key                   NUMBER,
+    device_key                     NUMBER,
+
+    transaction_date_key           NUMBER,
+
+    transaction_timestamp          TIMESTAMP,
+
+    transaction_type               VARCHAR(50),
+
+    payment_channel                VARCHAR(50),
+
+    transaction_status             VARCHAR(50),
+
+    transaction_amount             NUMBER(18,2),
+
+    fee_amount                     NUMBER(18,2),
+
+    tax_amount                     NUMBER(18,2),
+
+    exchange_rate                  NUMBER(18,6),
+
+    fraud_score                    NUMBER(10,2),
+
+    fraud_flag                     VARCHAR(1),
+
+    international_transaction_flag VARCHAR(1),
+
+    high_value_transaction_flag    VARCHAR(1),
+
+    failed_transaction_flag        VARCHAR(1),
+
+    warehouse_insert_ts            TIMESTAMP DEFAULT CURRENT_TIMESTAMP(),
+
+    CONSTRAINT pk_fct_transactions
+        PRIMARY KEY (transaction_key)
+);
+
+-----------------------------------------
+
+CREATE OR REPLACE TABLE fct_account_daily_balance (
+
+    account_daily_balance_key      NUMBER GENERATED ALWAYS AS IDENTITY,
+
+    account_key                    NUMBER,
+
+    balance_date_key               NUMBER,
+
+    opening_balance                NUMBER(18,2),
+
+    closing_balance                NUMBER(18,2),
+
+    average_balance                NUMBER(18,2),
+
+    total_debit_amount             NUMBER(18,2),
+
+    total_credit_amount            NUMBER(18,2),
+
+    warehouse_insert_ts            TIMESTAMP DEFAULT CURRENT_TIMESTAMP(),
+
+    CONSTRAINT pk_fct_account_daily_balance
+        PRIMARY KEY (account_daily_balance_key)
+);
+
+==========================
+
+CREATE OR REPLACE TABLE fct_customer_risk (
+
+    customer_risk_key              NUMBER GENERATED ALWAYS AS IDENTITY,
+
+    customer_key                   NUMBER,
+
+    risk_evaluation_date_key       NUMBER,
+
+    fraud_transaction_count        NUMBER,
+
+    high_value_transaction_count   NUMBER,
+
+    suspicious_device_count        NUMBER,
+
+    failed_transaction_count       NUMBER,
+
+    aml_alert_count                NUMBER,
+
+    dynamic_risk_score             NUMBER(10,2),
+
+    high_risk_flag                 VARCHAR(1),
+
+    aml_watchlist_flag             VARCHAR(1),
+
+    suspicious_behavior_flag       VARCHAR(1),
+
+    warehouse_insert_ts            TIMESTAMP DEFAULT CURRENT_TIMESTAMP(),
+
+    CONSTRAINT pk_fct_customer_risk
+        PRIMARY KEY (customer_risk_key)
+);
+
+
+
+
+
+

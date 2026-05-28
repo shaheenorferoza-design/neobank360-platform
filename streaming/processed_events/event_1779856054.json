@@ -1,0 +1,18 @@
+{
+  "event_id": "EVT7286",
+  "customer_id": "C106",
+  "account_id": "A1010",
+  "event_type": "UPI_PAYMENT",
+  "amount": 42352,
+  "currency": "INR",
+  "merchant": {
+    "name": "Zomato",
+    "category": "ECOMMERCE"
+  },
+  "device": {
+    "device_id": "D20",
+    "ip_address": "10.1.1.129",
+    "location": "Bangalore"
+  },
+  "txn_ts": "2026-05-27T09:57:34.819476"
+}

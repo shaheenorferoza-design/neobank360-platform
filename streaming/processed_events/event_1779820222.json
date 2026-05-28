@@ -1,0 +1,18 @@
+{
+  "event_id": "EVT4735",
+  "customer_id": "C102",
+  "account_id": "A1001",
+  "event_type": "UPI_PAYMENT",
+  "amount": 37428,
+  "currency": "INR",
+  "merchant": {
+    "name": "Amazon",
+    "category": "ECOMMERCE"
+  },
+  "device": {
+    "device_id": "D18",
+    "ip_address": "10.1.1.167",
+    "location": "Mumbai"
+  },
+  "txn_ts": "2026-05-27T00:00:22.474008"
+}

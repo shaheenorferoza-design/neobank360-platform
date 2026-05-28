@@ -1,0 +1,18 @@
+{
+  "event_id": "EVT7440",
+  "customer_id": "C106",
+  "account_id": "A1006",
+  "event_type": "CARD_SWIPE",
+  "amount": 43553,
+  "currency": "INR",
+  "merchant": {
+    "name": "Flipkart",
+    "category": "ECOMMERCE"
+  },
+  "device": {
+    "device_id": "D8",
+    "ip_address": "10.1.1.84",
+    "location": "Hyderabad"
+  },
+  "txn_ts": "2026-05-27T11:40:37.596684"
+}

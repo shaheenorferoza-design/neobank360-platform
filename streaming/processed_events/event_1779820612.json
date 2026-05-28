@@ -1,0 +1,18 @@
+{
+  "event_id": "EVT1952",
+  "customer_id": "C106",
+  "account_id": "A1003",
+  "event_type": "UPI_PAYMENT",
+  "amount": 39462,
+  "currency": "INR",
+  "merchant": {
+    "name": "Flipkart",
+    "category": "ECOMMERCE"
+  },
+  "device": {
+    "device_id": "D8",
+    "ip_address": "10.1.1.89",
+    "location": "Chennai"
+  },
+  "txn_ts": "2026-05-27T00:06:52.603181"
+}

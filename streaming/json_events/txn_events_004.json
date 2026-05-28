@@ -1,0 +1,362 @@
+[
+  {
+    "event_id": "EVT2001",
+    "customer_id": "C101",
+    "account_id": "A1001",
+    "event_type": "UPI_PAYMENT",
+    "amount": 12000,
+    "currency": "INR",
+    "merchant": {
+      "name": "Amazon",
+      "category": "ECOMMERCE"
+    },
+    "device": {
+      "device_id": "D100",
+      "ip_address": "10.1.1.1",
+      "location": "Hyderabad"
+    },
+    "txn_ts": "2026-05-25T10:00:01"
+  },
+  {
+    "event_id": "EVT2002",
+    "customer_id": "C101",
+    "account_id": "A1001",
+    "event_type": "UPI_PAYMENT",
+    "amount": 15000,
+    "currency": "INR",
+    "merchant": {
+      "name": "Flipkart",
+      "category": "ECOMMERCE"
+    },
+    "device": {
+      "device_id": "D100",
+      "ip_address": "10.1.1.1",
+      "location": "Hyderabad"
+    },
+    "txn_ts": "2026-05-25T10:00:20"
+  },
+  {
+    "event_id": "EVT2003",
+    "customer_id": "C101",
+    "account_id": "A1001",
+    "event_type": "UPI_PAYMENT",
+    "amount": 9000,
+    "currency": "INR",
+    "merchant": {
+      "name": "Myntra",
+      "category": "FASHION"
+    },
+    "device": {
+      "device_id": "D100",
+      "ip_address": "10.1.1.1",
+      "location": "Hyderabad"
+    },
+    "txn_ts": "2026-05-25T10:00:40"
+  },
+  {
+    "event_id": "EVT2004",
+    "customer_id": "C101",
+    "account_id": "A1001",
+    "event_type": "ATM_WITHDRAWAL",
+    "amount": 10000,
+    "currency": "INR",
+    "merchant": {
+      "name": "HDFC ATM",
+      "category": "ATM"
+    },
+    "device": {
+      "device_id": "D101",
+      "ip_address": "10.1.1.2",
+      "location": "Hyderabad"
+    },
+    "txn_ts": "2026-05-25T10:01:00"
+  },
+  {
+    "event_id": "EVT2005",
+    "customer_id": "C101",
+    "account_id": "A1001",
+    "event_type": "NETBANKING_TRANSFER",
+    "amount": 18000,
+    "currency": "INR",
+    "merchant": {
+      "name": "ICICI BANK",
+      "category": "BANK_TRANSFER"
+    },
+    "device": {
+      "device_id": "D102",
+      "ip_address": "10.1.1.3",
+      "location": "Bangalore"
+    },
+    "txn_ts": "2026-05-25T10:01:20"
+  },
+  {
+    "event_id": "EVT2006",
+    "customer_id": "C102",
+    "account_id": "A1002",
+    "event_type": "UPI_PAYMENT",
+    "amount": 1200,
+    "currency": "INR",
+    "merchant": {
+      "name": "Swiggy",
+      "category": "FOOD"
+    },
+    "device": {
+      "device_id": "D200",
+      "ip_address": "10.2.1.1",
+      "location": "Chennai"
+    },
+    "txn_ts": "2026-05-25T10:03:00"
+  },
+  {
+    "event_id": "EVT2007",
+    "customer_id": "C102",
+    "account_id": "A1002",
+    "event_type": "CARD_SWIPE",
+    "amount": 2500,
+    "currency": "INR",
+    "merchant": {
+      "name": "Lifestyle",
+      "category": "RETAIL"
+    },
+    "device": {
+      "device_id": "D200",
+      "ip_address": "10.2.1.1",
+      "location": "Chennai"
+    },
+    "txn_ts": "2026-05-25T10:05:00"
+  },
+  {
+    "event_id": "EVT2008",
+    "customer_id": "C103",
+    "account_id": "A1003",
+    "event_type": "UPI_PAYMENT",
+    "amount": 700,
+    "currency": "INR",
+    "merchant": {
+      "name": "Uber",
+      "category": "TRAVEL"
+    },
+    "device": {
+      "device_id": "D300",
+      "ip_address": "10.3.1.1",
+      "location": "Mumbai"
+    },
+    "txn_ts": "2026-05-25T10:06:00"
+  },
+  {
+    "event_id": "EVT2009",
+    "customer_id": "C103",
+    "account_id": "A1003",
+    "event_type": "CARD_SWIPE",
+    "amount": 3200,
+    "currency": "INR",
+    "merchant": {
+      "name": "Reliance Digital",
+      "category": "ELECTRONICS"
+    },
+    "device": {
+      "device_id": "D301",
+      "ip_address": "10.3.1.2",
+      "location": "Mumbai"
+    },
+    "txn_ts": "2026-05-25T10:07:00"
+  },
+  {
+    "event_id": "EVT2010",
+    "customer_id": "C104",
+    "account_id": "A1004",
+    "event_type": "ATM_WITHDRAWAL",
+    "amount": 5000,
+    "currency": "INR",
+    "merchant": {
+      "name": "SBI ATM",
+      "category": "ATM"
+    },
+    "device": {
+      "device_id": "D400",
+      "ip_address": "10.4.1.1",
+      "location": "Delhi"
+    },
+    "txn_ts": "2026-05-25T10:08:00"
+  },
+  {
+    "event_id": "EVT2011",
+    "customer_id": "C105",
+    "account_id": "A1005",
+    "event_type": "UPI_PAYMENT",
+    "amount": 950,
+    "currency": "INR",
+    "merchant": {
+      "name": "Zomato",
+      "category": "FOOD"
+    },
+    "device": {
+      "device_id": "D500",
+      "ip_address": "10.5.1.1",
+      "location": "Pune"
+    },
+    "txn_ts": "2026-05-25T10:09:00"
+  },
+  {
+    "event_id": "EVT2012",
+    "customer_id": "C106",
+    "account_id": "A1006",
+    "event_type": "NETBANKING_TRANSFER",
+    "amount": 42000,
+    "currency": "INR",
+    "merchant": {
+      "name": "Axis Bank",
+      "category": "BANK_TRANSFER"
+    },
+    "device": {
+      "device_id": "D600",
+      "ip_address": "10.6.1.1",
+      "location": "Kolkata"
+    },
+    "txn_ts": "2026-05-25T10:10:00"
+  },
+  {
+    "event_id": "EVT2013",
+    "customer_id": "C107",
+    "account_id": "A1007",
+    "event_type": "CARD_SWIPE",
+    "amount": 1800,
+    "currency": "INR",
+    "merchant": {
+      "name": "Shoppers Stop",
+      "category": "RETAIL"
+    },
+    "device": {
+      "device_id": "D700",
+      "ip_address": "10.7.1.1",
+      "location": "Bangalore"
+    },
+    "txn_ts": "2026-05-25T10:11:00"
+  },
+  {
+    "event_id": "EVT2014",
+    "customer_id": "C108",
+    "account_id": "A1008",
+    "event_type": "UPI_PAYMENT",
+    "amount": 600,
+    "currency": "INR",
+    "merchant": {
+      "name": "BookMyShow",
+      "category": "ENTERTAINMENT"
+    },
+    "device": {
+      "device_id": "D800",
+      "ip_address": "10.8.1.1",
+      "location": "Hyderabad"
+    },
+    "txn_ts": "2026-05-25T10:12:00"
+  },
+  {
+    "event_id": "EVT2015",
+    "customer_id": "C109",
+    "account_id": "A1009",
+    "event_type": "ATM_WITHDRAWAL",
+    "amount": 8000,
+    "currency": "INR",
+    "merchant": {
+      "name": "ICICI ATM",
+      "category": "ATM"
+    },
+    "device": {
+      "device_id": "D900",
+      "ip_address": "10.9.1.1",
+      "location": "Chennai"
+    },
+    "txn_ts": "2026-05-25T10:13:00"
+  },
+  {
+    "event_id": "EVT2016",
+    "customer_id": "C110",
+    "account_id": "A1010",
+    "event_type": "UPI_PAYMENT",
+    "amount": 3500,
+    "currency": "INR",
+    "merchant": {
+      "name": "BigBasket",
+      "category": "GROCERY"
+    },
+    "device": {
+      "device_id": "D1000",
+      "ip_address": "10.10.1.1",
+      "location": "Pune"
+    },
+    "txn_ts": "2026-05-25T10:14:00"
+  },
+  {
+    "event_id": "EVT2017",
+    "customer_id": "C111",
+    "account_id": "A1011",
+    "event_type": "CARD_SWIPE",
+    "amount": 2700,
+    "currency": "INR",
+    "merchant": {
+      "name": "Pantaloons",
+      "category": "FASHION"
+    },
+    "device": {
+      "device_id": "D1100",
+      "ip_address": "10.11.1.1",
+      "location": "Mumbai"
+    },
+    "txn_ts": "2026-05-25T10:15:00"
+  },
+  {
+    "event_id": "EVT2018",
+    "customer_id": "C112",
+    "account_id": "A1012",
+    "event_type": "NETBANKING_TRANSFER",
+    "amount": 15000,
+    "currency": "INR",
+    "merchant": {
+      "name": "HDFC BANK",
+      "category": "BANK_TRANSFER"
+    },
+    "device": {
+      "device_id": "D1200",
+      "ip_address": "10.12.1.1",
+      "location": "Delhi"
+    },
+    "txn_ts": "2026-05-25T10:16:00"
+  },
+  {
+    "event_id": "EVT2019",
+    "customer_id": "C113",
+    "account_id": "A1013",
+    "event_type": "UPI_PAYMENT",
+    "amount": 2200,
+    "currency": "INR",
+    "merchant": {
+      "name": "Nykaa",
+      "category": "BEAUTY"
+    },
+    "device": {
+      "device_id": "D1300",
+      "ip_address": "10.13.1.1",
+      "location": "Bangalore"
+    },
+    "txn_ts": "2026-05-25T10:17:00"
+  },
+  {
+    "event_id": "EVT2020",
+    "customer_id": "C114",
+    "account_id": "A1014",
+    "event_type": "ATM_WITHDRAWAL",
+    "amount": 4000,
+    "currency": "INR",
+    "merchant": {
+      "name": "Axis ATM",
+      "category": "ATM"
+    },
+    "device": {
+      "device_id": "D1400",
+      "ip_address": "10.14.1.1",
+      "location": "Kolkata"
+    },
+    "txn_ts": "2026-05-25T10:18:00"
+  }
+]

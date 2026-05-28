@@ -1,0 +1,18 @@
+{
+  "event_id": "EVT7102",
+  "customer_id": "C102",
+  "account_id": "A1004",
+  "event_type": "NETBANKING_TRANSFER",
+  "amount": 33340,
+  "currency": "INR",
+  "merchant": {
+    "name": "Zomato",
+    "category": "ECOMMERCE"
+  },
+  "device": {
+    "device_id": "D15",
+    "ip_address": "10.1.1.161",
+    "location": "Chennai"
+  },
+  "txn_ts": "2026-05-27T16:40:42.591431"
+}

@@ -1,0 +1,18 @@
+{
+  "event_id": "EVT3478",
+  "customer_id": "C106",
+  "account_id": "A1002",
+  "event_type": "NETBANKING_TRANSFER",
+  "amount": 34026,
+  "currency": "INR",
+  "merchant": {
+    "name": "Swiggy",
+    "category": "ECOMMERCE"
+  },
+  "device": {
+    "device_id": "D1",
+    "ip_address": "10.1.1.118",
+    "location": "Hyderabad"
+  },
+  "txn_ts": "2026-05-27T09:26:49.017135"
+}

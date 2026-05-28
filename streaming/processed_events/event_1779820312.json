@@ -1,0 +1,18 @@
+{
+  "event_id": "EVT7616",
+  "customer_id": "C101",
+  "account_id": "A1003",
+  "event_type": "UPI_PAYMENT",
+  "amount": 46187,
+  "currency": "INR",
+  "merchant": {
+    "name": "Swiggy",
+    "category": "ECOMMERCE"
+  },
+  "device": {
+    "device_id": "D6",
+    "ip_address": "10.1.1.95",
+    "location": "Chennai"
+  },
+  "txn_ts": "2026-05-27T00:01:52.501004"
+}

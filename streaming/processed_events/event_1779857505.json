@@ -1,0 +1,18 @@
+{
+  "event_id": "EVT4651",
+  "customer_id": "C105",
+  "account_id": "A1007",
+  "event_type": "ATM_WITHDRAWAL",
+  "amount": 7991,
+  "currency": "INR",
+  "merchant": {
+    "name": "Amazon",
+    "category": "ECOMMERCE"
+  },
+  "device": {
+    "device_id": "D12",
+    "ip_address": "10.1.1.80",
+    "location": "Chennai"
+  },
+  "txn_ts": "2026-05-27T10:21:45.400238"
+}
