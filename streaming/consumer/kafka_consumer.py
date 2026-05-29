@@ -1,5 +1,4 @@
 import json
-import uuid
 from kafka import KafkaConsumer
 import snowflake.connector
 
