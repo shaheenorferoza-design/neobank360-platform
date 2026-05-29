@@ -27,7 +27,7 @@ CREATE OR REPLACE TABLE dim_customer (
 );
 ---------------------logic---------------------------------
 
--------------------------dim_customer mapping----------------
+-------------------------dim_customer logic----------------
 
 customer_key -- hash-based surrogate generation
 customer_id -- null handling
@@ -44,8 +44,15 @@ effective_start_date -- ware house generate login current timestamp
 effective_end_date -- Current active version - null 
 
 current_flag -- current 'Y' historical 'N'
-warehouse_insert_ts-- 
 
+------------- scd type 2 should be triggered on the below columns-----------
+
+full_name
+city
+state
+occupation
+kyc_status
+risk_category
 ---------------------------------------------------
 
 -------------
