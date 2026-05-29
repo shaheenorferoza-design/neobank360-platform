@@ -1,0 +1,61 @@
+name: dbt CI
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+
+jobs:
+  dbt-ci:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: dbt/transformations
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dbt
+        run: |
+          pip install dbt-core dbt-snowflake
+
+      - name: Create dbt profile
+        run: |
+          mkdir -p ~/.dbt
+
+          cat > ~/.dbt/profiles.yml << EOF
+          transformations:
+            target: dev
+
+            outputs:
+              dev:
+                type: snowflake
+                account: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+                user: ${{ secrets.SNOWFLAKE_USER }}
+                password: ${{ secrets.SNOWFLAKE_PASSWORD }}
+
+                role: ACCOUNTADMIN
+                database: NEOBANK360
+                warehouse: NEOBANK_WH
+                schema: STAGING
+
+                threads: 1
+          EOF
+
+      - name: dbt debug
+        run: dbt debug
+
+      - name: dbt parse
+        run: dbt parse
+
+      - name: dbt test
+        run: dbt test
